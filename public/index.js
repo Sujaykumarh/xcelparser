@@ -147,8 +147,8 @@ function postData() {
     $('#fileDropZone').addClass('disabled');
     $('#parseButton').addClass('disabled');
     $('#resetButton').addClass('disabled');
-    $('#colSelect').addAttr('disabled');
-    $('#worksheetSelect').addAttr('disabled');
+    $('#colSelect').attr('disabled', '');
+    $('#worksheetSelect').attr('disabled', '');
     
     // https://github.com/eligrey/FileSaver.js/wiki/Saving-a-remote-file
     var xhr = new XMLHttpRequest();
