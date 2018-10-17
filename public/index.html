@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- -------------------------------------------------------------------------------
+-- Copyright (c) 2018 Sujaykumar.Hublikar <hello@sujaykumarh.com>
+--
+-- Licensed under the Apache License, Version 2.0 (the "License");
+-- you may not use this file except in compliance with the License.
+-- You may obtain a copy of the License at
+--
+--		http://www.apache.org/licenses/LICENSE-2.0
+--
+-- Unless required by applicable law or agreed to in writing, software
+-- distributed under the License is distributed on an "AS IS" BASIS,
+-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-- See the License for the specific language governing permissions and
+-- limitations under the License.
+--------------------------------------------------------------------------------- -->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>xcelparser</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery Lib -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap Lib -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <!-- FileSaves.js -->
+    <script async="" src="https://cdn.rawgit.com/eligrey/Blob.js/0cef2746414269b16834878a8abc52eb9d53e6bd/Blob.js"></script>
+    <script async="" src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+    <!-- Index.js -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/index.css" />
+    <script src="/index.js"></script>
+</head>
+
+<body>
+    <div class="container-fulid">
+        <div class="container" id="AppName">
+            <h2><img src="/images/favicon.png" height="80px" alt="logo" style="margin-right: 15px;">xcelparser</h2>
+        </div>
+        <hr class="container">
+        <div class="container" id="mainContent">
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta enim nec felis
+                eleifend, non lobortis
+                ipsum blandit. Aliquam feugiat eleifend tellus vitae tristique. Donec et est pellentesque, finibus
+                risus. </p>
+            <hr>
+            <div class="row">
+                <div class="col-12" style="padding-bottom: 10px;">
+                    <p>Column and Worksheet to parse</p>
+                    <p style="font-size: .85rem;">Provide Column/Worksheet Number or String. <span class="text-monospace">Eg: Col: 10 or Col: AA</span></p>
+                </div>
+                <div class="col-md-6 col-sm-12 input-group">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="colSelect">Column</label>
+                    </div>
+                    <input type="text" aria-label="0" class="form-control" id="colSelect" value="1">
+                </div>
+                <div class="col-md-6 col-sm-12 input-group">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="worksheetSelect">Worksheet</label>
+                    </div>
+                    <input disabled type="text" aria-label="0" class="form-control" id="worksheetSelect" value="1">
+                </div>
+                <div class="col-12" style="padding-top: 10px; font-size: .8rem;">
+                    <p><b>NOTE</b>: Column and Worksheet starts from 1</p>
+                </div>
+            </div>
+
+            <h6 id="fileNameContainer"><i class="fas fa-file-excel"></i><span id="fileName">None</span></h6>
+            <div id="fileDropZone" class="text-center">
+                <h1><i class="fas fa-cloud-upload-alt"></i></h1>
+                <p>Drag a .xlsx File to upload</p>
+                <a href="" id="fileUploadLink">Browse file</a>
+                <p id="maxFileSize" class="container">Max. file size 1MB</p>
+            </div>
+            <div class="text-right" style="margin: 10px 0;">
+                <button id="resetButton" class="btn btn-outline-secondary" type="reset">Reset</button>
+                <button id="parseButton" class="disabled btn btn-primary" type="submit">Parse</button>
+            </div>
+        </div>
+    </div>
+    <span id="dump">
+        <form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+            <input id="fileInput" type="file" name="file" accept=".xlsx">
+        </form>
+    </span>
+</body>
+
+</html>
