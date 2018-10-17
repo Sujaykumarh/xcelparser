@@ -14,7 +14,7 @@
  ** limitations under the License.
  ******************************************************************************/
 
-var apiURL = "/api/parser";
+var apiURL = "https://xcelparser.herokuapp.com/api/parser";
 var parserURL = "/xlsx";
 var formData = null;
 var url;
