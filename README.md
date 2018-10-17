@@ -2,7 +2,7 @@
 
 ## [DEMO](https://sujaykumarh.github.io/xcelparser/)
 
--servercode
+-frontend code
 
 xlsx parser modifies .xlsx based on custom script 
 
