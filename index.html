@@ -20,7 +20,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>xcelparser</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- jQuery Lib -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
@@ -38,14 +38,14 @@
     <script async="" src="https://cdn.rawgit.com/eligrey/Blob.js/0cef2746414269b16834878a8abc52eb9d53e6bd/Blob.js"></script>
     <script async="" src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
     <!-- Index.js -->
-    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
-    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/index.css" />
+    <script src="/index.js"></script>
 </head>
 
 <body>
     <div class="container-fulid">
         <div class="container" id="AppName">
-            <h2><img src="images/favicon.png" height="80px" alt="logo" style="margin-right: 15px;">xcelparser</h2>
+            <h2><img src="/images/favicon.png" height="80px" alt="logo" style="margin-right: 15px;">xcelparser</h2>
         </div>
         <hr class="container">
         <div class="container" id="mainContent">
@@ -85,7 +85,10 @@
             </div>
             <div class="text-right" style="margin: 10px 0;">
                 <button id="resetButton" class="btn btn-outline-secondary" type="reset">Reset</button>
-                <button id="parseButton" class="disabled btn btn-primary" type="submit">Parse</button>
+                <button id="parseButton" class="disabled btn btn-primary" type="submit">
+                    <i class="fa fa-spinner fa-spin" style="display: none;"></i>
+                    Parse
+                </button>
             </div>
         </div>
     </div>
