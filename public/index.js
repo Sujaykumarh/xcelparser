@@ -143,6 +143,13 @@ $(document).ready(function () {
 });
 
 function postData() {
+    $('.fa-spinner').show();
+    $('#fileDropZone').addClass('disabled');
+    $('#parseButton').addClass('disabled');
+    $('#resetButton').addClass('disabled');
+    $('#colSelect').addClass('disabled');
+    $('#worksheetSelect').addClass('disabled');
+    
     // https://github.com/eligrey/FileSaver.js/wiki/Saving-a-remote-file
     var xhr = new XMLHttpRequest();
     xhr.open("POST", apiURL + parserURL);
@@ -158,6 +165,13 @@ function postData() {
         }
     };
     xhr.onload = function () {
+        $('.fa-spinner').hide();
+        $('#fileDropZone').removeClass('disabled');
+        $('#parseButton').removeClass('disabled');
+        $('#resetButton').removeClass('disabled');
+        $('#colSelect').removeClass('disabled');
+        //$('#worksheetSelect').removeClass('disabled');    // TODO
+
         if (xhr.status !== 200) {
             var response = JSON.parse(xhr.responseText);
             console.log(response.error);
@@ -166,10 +180,15 @@ function postData() {
 
         // save file https://stackoverflow.com/a/51355169
         var disposition = xhr.getResponseHeader('Content-Disposition');
-        var startIndex = disposition.indexOf("filename=") + 10; // Adjust '+ 10' if filename is not the right one.
-        var endIndex = disposition.length - 1; //Check if '- 1' is necessary
-        var filename = disposition.substring(startIndex, endIndex);
-        saveAs(xhr.response, filename);
+        if(disposition !== null){
+            var startIndex = disposition.indexOf("filename=") + 10; // Adjust '+ 10' if filename is not the right one.
+            var endIndex = disposition.length - 1; //Check if '- 1' is necessary
+            var filename = disposition.substring(startIndex, endIndex);
+            saveAs(xhr.response, filename);
+        }else{
+            saveAs(xhr.response, 'file.xlsx');
+        }
+
         $.ajax({
             url: apiURL + '/complete',
             data: '',
