@@ -133,6 +133,7 @@ router.post('/xlsx', fileHandler, (req, res, next) => {
                 // Send Workbook
 
                 res.setHeader('Content-Type', xlsxMimeType);
+                res.setHeader('Content-disposition', 'attachment; filename=' + file.filename);
                 res.download('./tmp/' + file.filename);
 
                 // DELETE File after download
