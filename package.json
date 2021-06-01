@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "express-multipart-file-parser": "^0.1.2",
     "express-session": "^1.16.2",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "path": "^0.12.7"
   },
   "engines": {
