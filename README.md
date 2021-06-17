@@ -1,15 +1,10 @@
 ## xCelParser
 
-<br>
 
-Actual Server with its frontend
-
-#### [SERVER](https://xcelparser.herokuapp.com/)
+Note: This project is no longer maintained apart from fixes from occasional dependabot alerts.
 
 ------
-Frontend Using server API callbacks
-
-#### [CLIENT DEMO](https://sujaykumarh.github.io/xcelparser/)
+#### [DEMO](https://sujaykumarh.github.io/xcelparser/)
 
 -----
 
@@ -21,7 +16,7 @@ This is the sever side code repo. Checkout [gh-pages](https://github.com/Sujayku
 
 ### Screenshot
 
-![Screenshot](https://raw.githubusercontent.com/Sujaykumarh/xcelparser/master/public/extra/screenshot/screenshot_1.png)
+![Screenshot](public/extra/screenshot/screenshot_1.png)
 
 <br>
 
@@ -82,4 +77,4 @@ for .xlsx files
 
 #### Why?
 
-Was asked by recruiter, for my interest in a position for Backend Developer - Node JS
+Was asked by recruiter, for my interest in a position for Backend Developer - Node JS.
